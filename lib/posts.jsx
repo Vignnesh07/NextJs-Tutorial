@@ -42,6 +42,7 @@ export function getSortedPostsData(){
 }
 
 export function getAllPostsIds() {
+    // Fetching data from system files
     const fileNames = fs.readdirSync(postsDirectory);
 
     return fileNames.map((fileName) => {
@@ -51,6 +52,17 @@ export function getAllPostsIds() {
             }
         }
     })
+
+    // Instead of the file system, fetch post data from an external API endpoint
+    // const res = await fetch('..');
+    // const posts = await res.json();
+    // return posts.map((post) => {
+    //     return {
+    //     params: {
+    //         id: post.id,
+    //     },
+    //     };
+    // });
 
     // Returns an array that looks like below:
     // [
